@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ShipYard
 
-## Getting Started
+A product-catalog storefront built with Next.js + TypeScript.
 
-First, run the development server:
+- **Live site**: https://preethesh-hub.github.io/shipyard/
+- **Lighthouse Performance**: 98 (mobile)
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/shipyard](http://localhost:3000/shipyard) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build and Export
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+This generates a static export in the `out/` directory, optimized for deployment on GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
+## What it does
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Browse a product grid and open a detail page for each product.
+- Optimized with `next/image` (responsive sizes, aspect ratio preservation, eager `priority` loading on hero images).
+- Custom font optimization with `next/font/google` (`Inter` with `display: swap`).
+- Dynamic chunk splitting with `next/dynamic` for heavy client components (`Reviews`).
+- Dynamic per-page metadata via `generateMetadata`.
+- Resilient UI states: `loading.tsx` (skeleton/status placeholder), `error.tsx` (interactive client error boundary with reset retry), and `not-found.tsx` (custom 404).
