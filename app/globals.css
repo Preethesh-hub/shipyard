@@ -16,7 +16,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: inherit;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -100,6 +100,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-emoji {
@@ -177,6 +187,17 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
 .detail-emoji {
@@ -239,6 +260,198 @@ a {
   color: #374151;
 }
 
+/* Reviews Section */
+.reviews-section {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.reviews-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.reviews-score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.reviews-score-num {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--foreground);
+}
+
+.reviews-score-stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin: 0.25rem 0;
+}
+
+.reviews-score-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ratings-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 440px;
+  margin-bottom: 2.5rem;
+}
+
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.breakdown-label {
+  width: 55px;
+  color: var(--text-muted);
+}
+
+.breakdown-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.breakdown-fill {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 999px;
+}
+
+.breakdown-pct {
+  width: 35px;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.review-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-author {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.review-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.review-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.review-rating {
+  color: #f59e0b;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.review-headline {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.review-body {
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.review-footer {
+  margin-top: 0.25rem;
+}
+
+.review-helpful-btn {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.review-helpful-btn:hover {
+  background: #f3f4f6;
+  color: var(--foreground);
+}
+
+.reviews-loading {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
 /* Not Found Page */
 .notfound {
   text-align: center;
@@ -255,6 +468,31 @@ a {
   font-size: 1.15rem;
   color: var(--text-muted);
   margin-bottom: 1.75rem;
+}
+
+/* Resilient States */
+.status {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.status button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--foreground);
+  color: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.status button:hover {
+  opacity: 0.85;
 }
 
 @media (max-width: 768px) {
